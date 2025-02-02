@@ -1,5 +1,10 @@
-import gradio as gr
-from backend.app.utils import check_gown_size  # ✅ main.py 대신 utils.py에서 import
+import sys
+import os
+
+# ✅ 현재 파일의 상위 디렉토리(`backend/`)를 Python 모듈 경로에 추가
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from app.utils import check_gown_size  # ✅ backend.app.utils 대신 app.utils로 변경
 
 def gradio_interface(name, student_id, phone):
     return check_gown_size(name, student_id, phone)
