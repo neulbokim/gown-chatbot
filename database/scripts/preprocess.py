@@ -94,10 +94,12 @@ class GownDataPreprocessor:
 
 # 🔹 실행 코드
 if __name__ == "__main__":
-    # 현재 스크립트 파일(`preprocess.py`)의 위치를 기준으로 `database/raw` 경로 설정
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # `database/` 폴더 경로
-    raw_data_dir = os.path.join(base_dir, "raw")  # `database/raw/` 폴더 경로
+    # 현재 스크립트 파일(`preprocess.py`)이 있는 폴더 (scripts/) 기준으로 `database/` 폴더 찾기
+    scripts_dir = os.path.dirname(os.path.abspath(__file__))  # `database/scripts/` 폴더 경로
+    database_dir = os.path.dirname(scripts_dir)  # `database/` 폴더 경로
+    raw_data_dir = os.path.join(database_dir, "raw")  # `database/raw/` 폴더 경로
     input_filename = "2025 가운 신청.csv"
 
     preprocessor = GownDataPreprocessor(raw_data_dir, input_filename)
     preprocessor.run()
+
