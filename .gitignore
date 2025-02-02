@@ -1,0 +1,24 @@
+# 환경 변수 파일 (보안 중요!)
+.env
+
+# Node.js 관련 (npm install 시 자동 생성됨)
+node_modules/
+package-lock.json
+
+# Python 가상환경
+venv/
+__pycache__/
+
+# 데이터베이스 관련 파일
+database/raw/*
+
+# Git에서 폴더 유지 (raw 내부에 .gitkeep 추가)
+!database/raw/.gitkeep
+
+# IDE 관련 설정 파일 (선택 사항)
+.vscode/
+.idea/
+
+# OS에서 생성되는 불필요한 파일 (Mac & Windows)
+.DS_Store
+Thumbs.db
