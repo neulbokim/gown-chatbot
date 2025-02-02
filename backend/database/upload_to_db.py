@@ -4,9 +4,9 @@ import os
 from config.settings import settings  # 변경: settings.py 사용
 
 # ✅ 1. CSV 데이터 불러오기 (절대 경로 사용)
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # backend/ 상위 폴더
+# `gown-chatbot/` 최상위 폴더 기준으로 설정
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 csv_path = os.path.join(base_dir, "database/raw/preprocessed_2025 가운 신청.csv")
-
 try:
     df = pd.read_csv(csv_path)
     print(f"✅ {len(df)}개의 데이터를 불러왔습니다.")
