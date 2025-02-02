@@ -1,6 +1,14 @@
 import psycopg2
 import re
-from backend.config.settings import settings
+import sys
+import os
+
+# ✅ `backend/`를 Python 모듈 경로에 추가
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from config.settings import settings  # ✅ `backend.config.settings` 대신 `config.settings`
+
+
 
 # ✅ 전화번호 정규화 함수
 def normalize_phone(phone: str) -> str:
