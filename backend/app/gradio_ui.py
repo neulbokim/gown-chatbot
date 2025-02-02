@@ -1,5 +1,5 @@
 import gradio as gr
-from backend.app.main import check_gown_size
+from backend.app.utils import check_gown_size  # ✅ main.py 대신 utils.py에서 import
 
 def gradio_interface(name, student_id, phone):
     return check_gown_size(name, student_id, phone)
