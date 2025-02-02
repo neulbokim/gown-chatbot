@@ -1,5 +1,6 @@
 import sys
 import os
+import gradio as gr
 
 # ✅ 현재 파일의 상위 디렉토리(`backend/`)를 Python 모듈 경로에 추가
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
