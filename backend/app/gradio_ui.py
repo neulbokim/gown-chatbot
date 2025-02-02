@@ -21,7 +21,7 @@ gradio_app = gr.Interface(
     outputs="text",
     title="🥼 가운 사이즈 조회 시스템",
     description="이름, 학번, 전화번호를 입력하면 가운 사이즈를 알려드립니다.",
-    allow_flagging="never",
+    flagging_mode="never",
 )
 
 # ✅ Gradio 실행 함수
